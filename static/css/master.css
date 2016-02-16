@@ -1,0 +1,76 @@
+html {
+    margin: 0;
+    height: 100%;
+    z-index: 0;
+}
+body {
+    margin: 0;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3) ), url('../img/bg.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+@font-face {
+    font-family: titleFont;
+    src: url('../font/Reckoner.ttf');
+}
+
+h1, h2, h3 {
+    font-family: titleFont;
+    text-align: center;
+}
+
+.home-heading {
+    color: #dedede;
+    margin-top: 200px;
+    margin-bottom: 0;
+    font-size: 72px;
+}
+.home-flavor {
+    color: #980000;
+    margin-top: -7px;
+    font-size: 23px;
+    letter-spacing: 7.5px;
+}
+
+.home-logo {
+    background-size: 250px auto;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.start-button {
+    font-size: 25px;
+    font-family: titleFont;
+    margin-top: 40px;
+}
+
+.screen {
+    margin: 0;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-primary {
+    outline: none;
+	background-color:#4b3f39;
+	text-decoration:none;
+	color:#fff;
+	position:relative;
+	padding:5px 10px;
+    padding-top: 7px;
+	border-radius: 5px;
+	box-shadow: inset 0px 1px 0px #9e8d84, 0px 5px 0px 0px #322620, 0px 10px 5px transparent;
+}
+
+.btn-primary:active {
+	top:3px;
+	box-shadow: inset 0px 1px 0px #9e8d84, 0px 2px 0px 0px #322620, 0px 5px 3px transparent;
+}
