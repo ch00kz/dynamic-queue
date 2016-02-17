@@ -4,14 +4,37 @@
         <meta charset="utf-8">
         <title>Dynamic Queue</title>
         <link rel="stylesheet" href="static/css/master.css" media="screen" title="no title" charset="utf-8">
-        <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="static/font-awesome/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+        <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+        <script type="text/javascript">window.$ = window.jQuery = require('./static/js/jquery.min.js');</script>
         <script type="text/javascript">
             function goToSummoners() {
                 var home = document.getElementById('home');
                 var summoners = document.getElementById('summoners');
-                home.className += " slideToLeft";
-                summoners.className += " slideFromRight";
+                home.className = "screen slideLeft";
+                summoners.className = "screen slideLeft";
             }
+            function goToRoles() {
+                alert("Can you chill the fuck out");
+            }
+            function goHome() {
+                var home = document.getElementById('home');
+                var summoners = document.getElementById('summoners');
+                home.className = "screen slideRight";
+                summoners.className = "screen slideRight";
+            }
+            $(function() {
+                $( "#form-summoners input" ).change(function() {
+                    var value = $(this).val();
+                    console.log("change fired", value);
+                     if (value) {
+                         $(this).parent().addClass('ready');
+                     } else {
+                         $(this).parent().removeClass('ready');
+                     }
+                });
+            });
         </script>
     </head>
     <body>
@@ -21,13 +44,26 @@
             <button class="btn-primary start-button" type="button" onclick="goToSummoners()">Feed</button>
         </div>
         <div id="summoners" class="screen">
+            <h1 class="instruction">Please enter Summoner<span>Names</span></h1>
             <form id="form-summoners">
-                <input type="text" name="summoner1">
-                <input type="text" name="summoner2">
-                <input type="text" name="summoner3">
-                <input type="text" name="summoner4">
-                <input type="text" name="summoner5">
+                <div class="input-container">
+                    <i class="fa fa-smile-o"></i><input type="text" name="summoner1">
+                </div>
+                <div class="input-container">
+                    <i class="fa fa-smile-o"></i><input type="text" name="summoner2">
+                </div>
+                <div class="input-container">
+                    <i class="fa fa-smile-o"></i><input type="text" name="summoner3">
+                </div>
+                <div class="input-container">
+                    <i class="fa fa-smile-o"></i><input type="text" name="summoner4">
+                </div>
+                <div class="input-container">
+                    <i class="fa fa-smile-o"></i><input type="text" name="summoner5">
+                </div>
             </form>
+            <button class="btn-primary roles-button" type="button" onclick="goToRoles()">Feed</button>
+            <button class="btn-primary roles-button" type="button" onclick="goHome()">Home</button>
         </div>
     </body>
 </html>

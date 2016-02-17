@@ -20,21 +20,23 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: titleFont;
     text-align: center;
+    color: #dedede;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .home-heading {
-    color: #dedede;
     margin-top: 200px;
     margin-bottom: 0;
     font-size: 72px;
+    font-family: titleFont;
 }
 .home-flavor {
     color: #980000;
     margin-top: -7px;
     font-size: 23px;
     letter-spacing: 7.5px;
+    font-family: titleFont;
 }
 
 .home-logo {
@@ -45,8 +47,7 @@ h1, h2, h3 {
 }
 
 .start-button {
-    font-size: 25px;
-    font-family: titleFont;
+
     margin-top: 40px;
 }
 
@@ -58,13 +59,72 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     text-align: center;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition-duration: 0.6s;
+            transition-duration: 0.6s;
 }
 
+
+/* Styles for Summoners Page */
 #summoners {
     left: 100%;
 }
+#form-summoners {
+    width: 100%;
+}
+#form-summoners input {
+    border: 1px solid #404040;
+    border-radius: 4px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.61);
+    color: #fff;
+    box-shadow:inset 0 0 5px 5px #000;
+    outline: none;
+    padding-top: 7px;
+    padding-bottom: 9px;
+    text-indent: 50px;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
 
+.input-container {
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+#form-summoners i {
+    position: absolute;
+    top: 9px;
+    left: 14px;
+    padding-right: 8px;
+    font-size: 24px;
+    color: #480000;
+    display: inline-block;
+    border-right: 1px solid #272727;
+}
+
+.ready i {
+    color: green !important;
+}
+
+.instruction {
+    font-size: 24px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-weight: 300;
+}
+.instruction span {
+    color: red;
+}
+
+/* Styles for Buttons */
 .btn-primary {
+    font-size: 25px;
+    font-family: titleFont;
     outline: none;
 	background-color:#4b3f39;
 	text-decoration:none;
@@ -83,17 +143,21 @@ h1, h2, h3 {
 
 /* Animations */
 
-.slideToLeft{
-	-webkit-animation: moveToLeft .6s ease both;
-	animation: moveToLeft .6s ease both;
+.slideLeft{
+	-webkit-animation: moveLeft .6s ease both;
+	animation: moveLeft .6s ease both;
+}
+.slideRight{
+	-webkit-animation: moveRight .6s ease both;
+	animation: moveRight .6s ease both;
 }
 
-.slideFromRight{
-	-webkit-animation: moveToLeft .6s ease both;
-	animation: moveToLeft .6s ease both;
-}
-
-@-webkit-keyframes moveToLeft {
-	from { }
+@-webkit-keyframes moveLeft {
+	from {-webkit-transform: translateX(0%); }
 	to { -webkit-transform: translateX(-100%); }
+}
+
+@-webkit-keyframes moveRight {
+	from { -webkit-transform: translateX(-100%); }
+	to { -webkit-transform: translateX(0%); }
 }
