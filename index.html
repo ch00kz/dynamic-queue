@@ -5,12 +5,29 @@
         <title>Dynamic Queue</title>
         <link rel="stylesheet" href="static/css/master.css" media="screen" title="no title" charset="utf-8">
         <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600' rel='stylesheet' type='text/css'>
+        <script type="text/javascript">
+            function goToSummoners() {
+                var home = document.getElementById('home');
+                var summoners = document.getElementById('summoners');
+                home.className += " slideToLeft";
+                summoners.className += " slideFromRight";
+            }
+        </script>
     </head>
     <body>
-        <div class="home screen">
+        <div id="home" class="screen">
             <h1 class="home-heading">Dynamic Queue</h1>
             <h1 class="home-flavor">Let the feeding begin</h1>
-            <button class="btn-primary start-button" type="button" name="button">Feed</button>
+            <button class="btn-primary start-button" type="button" onclick="goToSummoners()">Feed</button>
+        </div>
+        <div id="summoners" class="screen">
+            <form id="form-summoners">
+                <input type="text" name="summoner1">
+                <input type="text" name="summoner2">
+                <input type="text" name="summoner3">
+                <input type="text" name="summoner4">
+                <input type="text" name="summoner5">
+            </form>
         </div>
     </body>
 </html>
